@@ -1,0 +1,11 @@
+on run argv
+    tell application "iTerm"
+        activate
+        tell the first terminal
+            launch session "Default Session"
+            tell current session
+                write text "ssh " & (system attribute "POPCLIP_TEXT")
+            end tell
+        end tell
+    end tell
+end run
